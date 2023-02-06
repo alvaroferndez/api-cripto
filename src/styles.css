@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+      background-image: url('https://diariobitcoin.b-cdn.net/wp-content/uploads/2022/10/mariia-shalabaieva-eTKnYl8mR6o-unsplash-1200x675.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+}
+
+.fa-solid{
+      font-size: 30px !important;
+}
+
+.hover:hover{
+      cursor: pointer;
+      scale: 1.2;
+}

@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AlmacenCriptoService } from '../almacen-cripto.service';
 
 @Component({
   selector: 'app-detalle',
@@ -7,15 +9,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./detalle.component.css']
 })
 export class DetalleComponent {
-  @Input() moneda = new Object;
-  datos:any=[""];
+  id_moneda:any;
 
-  constructor(private http:HttpClient){
-    this.lanzaPeticion()
+  constructor(private http:HttpClient, private route:ActivatedRoute, public datosApi: AlmacenCriptoService){
+    this.id_moneda = this.route.snapshot.paramMap.get('id')
+    this.obtenerDatos()
   }
 
-  lanzaPeticion(){
-    console.log(this.moneda)
+  obtenerDatos(){
+    this.datosApi.obtenerDatosDetalle(this.id_moneda)
+
   }
 
 }

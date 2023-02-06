@@ -1,0 +1,56 @@
+<div class="container contenedor-global-login">
+      <div class="contenedor-logo-login ms-5">
+            <a class="logo-login" routerLink="/">
+                  <img class="img-fluid hover" src="https://images.vexels.com/media/users/3/263036/isolated/preview/a11555a337ebe0f8b22c60eccdb1bfca-icono-de-criptomoneda-bitcoin.png" alt="">
+            </a>
+      </div>
+      
+      <section *ngIf="getIniciar()" class="contenedor-login ">
+            <section class="iniciar">
+                  <h1 class="titulo-inicio titulo">Inicio de sesión</h1>
+                  <form action="">
+                        <div class="inputbox">
+                              <input type="email" class="correo" 
+                                    placeholder="escriba su correo" [(ngModel)]="correo" [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                        <div class="inputbox">
+                              <input type="password" class="contraseña"
+                                    placeholder="escriba su contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                        <div class="inputbox ps-5 ms-5">
+                              <input (click)="alta()" type="button" class="subcribirse" id="iniciar-sesion" value="iniciar sesión">
+                        </div>
+                        <div class="inputbox ps-5 ms-5">
+                              <input type="button" (click)="altaGoogle()" name="google" id="google" value="google">
+                        </div>
+                  </form>
+            </section>
+            <section class="registrarse">
+                  <div class="cambiar-registrarse" (click)="cambiarRegistrarse()">
+                        <h1 class="cambiar hover">Registrarse</h1>
+                  </div>
+            </section>
+      </section>
+      <section *ngIf="!getIniciar()" class="contenedor-login">
+            <section class="iniciar">
+                  <div class="cambiar-iniciar" (click)="cambiarIniciar()">
+                        <h1 class="cambiar hover">Iniciar sesión</h1>
+                  </div>
+            </section>
+            <section class="registrarse">
+                  <h1 class="titulo-inicio titulo">Registrarse</h1>
+                  <form action="">
+                        <div class="inputbox">
+                              <input type="email" class="correo" [(ngModel)]="correo" [ngModelOptions]="{standalone: true}" placeholder="escriba su correo" required>
+                        </div>
+                        <div class="inputbox">
+                              <input type="password" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}" class="contraseña" placeholder="escriba su contraseña"
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        </div>
+                        <div class="inputbox">
+                              <input (click)="registro()" type="button" class="subcribirse" id="iniciar-sesion" value="iniciar sesión">
+                        </div>
+                  </form>
+            </section>
+      </section>
+</div>

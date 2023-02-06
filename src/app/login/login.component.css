@@ -1,0 +1,107 @@
+.contenedor-global-login{
+      height: 100vh;
+}
+
+.contenedor-logo-login{
+      height: 40%;
+}
+
+.contenedor-login{
+      /*disposicion*/
+      height: 60%;
+      display: grid;
+      grid-auto-flow: column;
+      justify-items: center;
+}
+
+/*inicio de sesion*/
+.iniciar{
+      /*disposicion*/
+      display: grid;
+      grid-template-rows: min-content;
+}
+
+.iniciar>form{
+      /*disposicion*/
+      display: grid;
+      grid-template-rows: repeat(3,min-content);
+      row-gap: 1em;
+}
+
+/*registrarse*/
+.registrarse{
+      /*disposicion*/
+      display: grid;
+      grid-template-rows: min-content;
+}
+
+.registrarse>form{
+      /*disposicion*/
+      display: grid;
+      grid-auto-rows: min-content;
+      row-gap: 1em;
+}
+
+.cambiar-iniciar,.cambiar-registrarse{
+      /*disposicon*/
+      display: grid;
+      grid-template-rows: repeat(3,1fr);
+}
+
+.cambiar{
+      /*disposicion*/
+      grid-row: 2 / 3;
+
+      /*decoracion*/
+      font-size: 40px;
+
+      /*transiciones*/
+      transform: rotateX(360deg);
+}
+
+.cambiar:hover{
+      /*decoracion*/
+      font-style: italic;
+      text-decoration: underline;
+}
+
+.contenedor-logo-login{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.logo-login{
+      width: 16vw;
+      height: 70%;
+}
+
+.logo-login>img{
+      height: 100%;
+      width: 100%;
+}
+
+.inputbox {
+      width: 300px;
+      height: 50px;
+      margin-top: 20px;
+}
+     .inputbox input {
+      width: 100%;
+      border: 2px solid #000;
+      outline: none;
+      background: none;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1.2em;
+    }
+     .inputbox [type="button"] {
+      width: 50%;
+      background: dodgerblue;
+      color: #fff;
+      border: #fff;
+    }
+     .inputbox:hover [type="button"] {
+      background: linear-gradient(45deg, rgb(0, 0, 0), dodgerblue);
+    }
+    

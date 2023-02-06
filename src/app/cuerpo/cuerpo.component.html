@@ -1,2 +1,51 @@
-<!-- <app-detalle *ngFor="let dato of lista" [moneda]="dato"></app-detalle> -->
-<p *ngFor="let dato of lista" >{{dato}}</p>
+<section id="tabla" class="intro" data-aos="fade-up">
+      <div class="h-100">
+            <div class=" d-flex align-items-center h-100">
+                  <div class="container">
+                        <div class="row justify-content-center">
+                              <div class="col-12">
+                                    <div class="card bg-light shadow-2-strong">
+                                          <div class="card-body">
+                                                <div class="table-responsive">
+                                                      <table class="table table-ligth table-borderless mb-0">
+                                                            <thead>
+                                                                  <tr>
+                                                                        <th scope="col">Detalle</th>
+                                                                        <th scope="col">Moneda</th>
+                                                                        <th scope="col">Simbolo</th>
+                                                                        <th scope="col">Precio</th>
+                                                                        <th scope="col">Capitalización</th>
+                                                                        <th scope="col">Volumen</th>
+                                                                        <th scope="col">Extremos 24h</th>
+                                                                  </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                  <tr>
+                                                                        <td></td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                        <td></td>
+                                                                  </tr>
+                                                                  <tr *ngFor="let dato of lista">
+                                                                        <td>
+                                                                              <a [routerLink]="['/detalle',dato.id]"><img [src]="dato.image.small" alt=""></a> 
+                                                                        </td>
+                                                                        <th>{{ dato.name }}</th>
+                                                                        <td>{{ dato.symbol }}</td>
+                                                                        <td>{{ dato.market_data.current_price.eur }} €</td>
+                                                                        <td>{{ dato.market_data.market_cap.eur }} €</td>
+                                                                        <td>{{ dato.market_data.total_volume.eur }} €</td>
+                                                                        <td>Máximo {{ dato.market_data.high_24h.eur }} € / Mínimo {{ dato.market_data.low_24h.eur }} €</td>
+                                                                        <td><i class="fa-solid fa-trash" (click)="eliminarMoneda(dato.id)"></i></td>
+                                                                  </tr>
+                                                            </tbody>
+                                                      </table>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</section>

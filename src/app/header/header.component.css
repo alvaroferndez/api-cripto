@@ -1,0 +1,14 @@
+.contenedor-logo{
+      width: 13vw;
+      height: 45%;
+}
+
+.contenedor-logo>img{
+      height: 100%;
+      width: 100%;
+}
+
+.hover:hover{
+      scale: 1.2;
+      cursor: pointer;
+}

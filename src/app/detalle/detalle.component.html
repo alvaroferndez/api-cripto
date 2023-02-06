@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+      <div class="contenedor-card row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <div class="card h-100 shadow-sm"> 
+                  <a [href]="this.datosApi.datos_detalle.links.homepage[0]" target="_blank">
+                        <img [src]="this.datosApi.datos_detalle.image.large" class="card-img-top" [alt]="this.datosApi.datos_detalle.name">
+                  </a>
+                  <div class="card-body">
+                        <div class="clearfix mb-3">
+                              <span class="float-start badge rounded-pill bg-primary">{{ this.datosApi.datos_detalle.name }}</span>
+                              <span class="float-end price-hp">{{ this.datosApi.datos_detalle.market_data.current_price.eur}}&euro;</span>
+                              <span></span>
+                        </div>
+                        <div class="clearfix mb-3">
+                              <span class="float-start badge rounded-pill text-dark">{{ this.datosApi.datos_detalle.symbol }}</span>
+                              <span *ngIf="this.datosApi.datos_detalle.genesis_date" class="float-end ">{{ this.datosApi.datos_detalle.genesis_date}}</span>
+                        </div>
+
+                        <!-- mostrar descripciones -->
+                        <ng-container *ngIf="this.datosApi.datos_detalle.description.es; else ingles">
+                              <h5 >{{ this.datosApi.datos_detalle.description.es }}</h5>
+                        </ng-container>
+                        <ng-template #ingles class="card-title">
+                              <ng-container *ngIf="this.datosApi.datos_detalle.description.en; else nada">
+                                    <h5>{{ this.datosApi.datos_detalle.description.en }}</h5>
+                              </ng-container>
+                        </ng-template>
+                        <ng-template #nada>
+                              <h5 >No hay descripcion disponible para esta moneda</h5>
+                        </ng-template>
+                        
+                        <div class="text-center my-4"> 
+                              <a *ngIf="this.datosApi.datos_detalle.links.repos_url.github[0]" class="btn btn-link btn-floating btn-lg text-dark m-1" [href]="this.datosApi.datos_detalle.links.repos_url.github[0]" target="_blank" role="button" data-mdb-ripple-color="dark">
+                                    <i class="fa-brands fa-github"></i>
+                              </a>
+                              <a *ngIf="this.datosApi.datos_detalle.links.subreddit_url" class="btn btn-link btn-floating btn-lg text-dark m-1" [href]="this.datosApi.datos_detalle.links.subreddit_url" target="_blank" role="button" data-mdb-ripple-color="dark">
+                                    <i class="fa-brands fa-reddit-alien"></i>
+                              </a>
+                        </div>
+                        <div class="text-center my-4"> 
+                              <a [routerLink]="['/detalle',this.datosApi.datos_detalle.id,'grafica']" class="btn btn-link btn-floating btn-lg text-dark m-1" [href]="this.datosApi.datos_detalle.links.repos_url.github[0]" role="button" data-mdb-ripple-color="dark">Ver gráfica</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<app-footer></app-footer>

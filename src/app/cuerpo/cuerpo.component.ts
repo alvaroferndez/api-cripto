@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AlmacenCriptoService } from '../almacen-cripto.service';
 
 @Component({
   selector: 'app-cuerpo',
@@ -7,4 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class CuerpoComponent {
   @Input() lista= new Array<any>();
+
+  constructor(private datosApi: AlmacenCriptoService) {
+    
+  }
+
+  eliminarMoneda(moneda:any){
+    this.datosApi.eliminarMoneda(moneda)
+  }
 }

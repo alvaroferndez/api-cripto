@@ -1,0 +1,8 @@
+<app-header></app-header>
+<!-- Si la sesion esta sin iniciar se enseña el get started -->
+<app-get-started *ngIf="!comprobar()"></app-get-started>
+<!-- Si la sesion esta iniciada se enseñan las monedas y la tabla con tus monedas -->
+<app-almacen *ngIf="comprobar()"></app-almacen>
+<app-footer></app-footer>
+
+

@@ -1,7 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { AlmacenCriptoService } from '../almacen-cripto.service';
-
 
 @Component({
   selector: 'app-cabecera',
@@ -11,19 +9,13 @@ import { AlmacenCriptoService } from '../almacen-cripto.service';
 export class CabeceraComponent {
   datos:any=[];
 
+
   constructor(private datosApi:AlmacenCriptoService){
     this.datos = datosApi.lista_monedas;
   }
 
-  @Output() primerEvento = new EventEmitter<object>();
 
-  agregarMoneda(moneda:object){
-    this.primerEvento.emit(moneda);
+  agregarMoneda(moneda:any){
+    this.datosApi.guardarMoneda(moneda)
   }
-
-  // ensenarMonedas(){
-  //   this.primerEvento.emit(this.monedas_elegidas);
-  // }
-
-
 }

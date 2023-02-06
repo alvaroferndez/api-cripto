@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container">
+            <div class="contenedor-logo">
+                  <img routerLink="/" class="img-fluid hover" src="https://images.vexels.com/media/users/3/263036/isolated/preview/a11555a337ebe0f8b22c60eccdb1bfca-icono-de-criptomoneda-bitcoin.png" alt="">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                  aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#"></a>
+                        </li>
+                  </ul>
+                  <span class="navbar-text me-5">
+                        <p *ngIf="!comprobar(); else no_iniciado" class="incio_sesion hover"><a routerLink="/login"><i class="fa-solid fa-user"></i></a></p>
+                        <ng-template #no_iniciado class="incio_sesion ">
+                              <p (click)="desloguear()"><i class="fa-solid fa-right-from-bracket hover text-black"></i></p>
+                        </ng-template>
+                  </span>
+            </div>
+      </div>
+</nav>

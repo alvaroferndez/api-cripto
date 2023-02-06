@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cripto-3b8d3": {
+      "hosting": {
+        "criptomonedas": [
+          "cripto-3b8d3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cripto-3b8d3"
+  }
+}
