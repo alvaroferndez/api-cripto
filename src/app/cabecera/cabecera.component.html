@@ -1,7 +1,9 @@
 <div class="contenedor-cabecera">
       <div class="cabecera">
             <div class="contenedor-moneda hover" *ngFor="let moneda of datos" (click)="agregarMoneda(moneda)">
-                  <span>{{moneda.nombre}}</span><img [src]="moneda.imagen.small" alt="">
+                  <div class="moneda">
+                        <span>{{moneda.nombre}}</span><img [src]="moneda.imagen.small" alt="">
+                  </div>
             </div>
       </div>
 </div>

@@ -17,8 +17,4 @@ export class AlmacenComponent {
   constructor(private http:HttpClient, public datosApi: AlmacenCriptoService, private firestore: Firestore, private auth:AutentificacionService) {
     this.datosApi.obtenerFavoritas();
   }
-
-
-//setInterval(this.tratarDatos, 5000)
-
 }

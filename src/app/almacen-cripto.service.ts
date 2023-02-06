@@ -35,23 +35,21 @@ export class AlmacenCriptoService {
 
   obtenerFavoritas(){
     this.db = collection(this.firestore,"monedas");
-    collectionData(query(this.db, where("usuario", "==", this.auth.id_usuario_activo))).subscribe((datos) => {this.favoritas_api = datos;this.tratarDatos(); });
+    collectionData(query(this.db, where("usuario", "==", this.auth.id_usuario_activo))).subscribe((datos) => {this.favoritas_api = datos;this.tratarDatos(); setInterval(this.tratarDatos,5000)});
   }
 
   tratarDatos(){
-    this.favoritas = [];
-    for(let moneda of this.favoritas_api){
-      this.http.get("https://api.coingecko.com/api/v3/coins/"+moneda.id).subscribe(
+      this.http.get("https://api.coingecko.com/api/v3/coins/").subscribe(
       (datos:any) => {
-        if(this.favoritas.find((moneda) => {moneda.id == datos.id})){
-          return
-        }else{
-          this.favoritas.push(datos)
-        }
-  
+        this.favoritas = [];
+        for(let moneda of this.favoritas_api)
+          datos.map((mon:any) => {
+            if(mon.id ==moneda.id){
+              this.favoritas.push(mon)
+            }
+          })
+        console.log(this.favoritas)
       })
-    }
-    console.log(this.favoritas)
   }
   
   guardarMoneda(moneda:any){
