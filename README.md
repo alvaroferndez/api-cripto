@@ -1,4 +1,10 @@
-# Criptomonedas
+# Cryptocurrency Management
+
+
+Application created with angular and firebase to manage your favorite cryptocurrencies with all the information about them.
+
+Add to favorites and currency detail are disabled due to the expiration of the use of the database provided by firebase.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
